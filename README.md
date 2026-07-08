@@ -1,285 +1,284 @@
-#  Pixerllr
+# pixerllr
 
-#A generatív videónak nincs szüksége több fantáziára. Több valóság kel!#
-> **Valóságlenyomatok AI-videókhoz — gravitáció, fény, mozgás, szél, víz és anatómia tanítása valódi felvételekből...**
+> **Reality fingerprints for AI video — extracting motion, light, wind, water, space, and anatomy priors from real footage, without storing the footage.**
 
-A hat ujjú kéz nem művészi döntés.
-A lebegő test nem stílus.
-A rossz irányba eső árnyék nem hangulat.
+A six-fingered hand is not an artistic choice.
+A floating body is not a style.
+A shadow falling the wrong way is not atmosphere.
 
-**Hiba — és te fizetsz érte minden elégetett kreditnél, minden kukázott generálásnál.**
+**It is an error — and you pay for it with every burned credit and every discarded generation.**
 
-Az AI-videógenerátorok nem tudják a fizikát.
-Nem azért, mert buták — azért, mert soha senki nem tanította meg nekik.
+AI video generators do not understand physics.
+Not because they are stupid — because nobody has ever taught them.
 
-A tanítóadatukban stúdiófény van, szélgép, drót és keverőpult.
-A modell azt tanulja, amit lát: **mozifizikát**.
+Their training data is full of studio lighting, wind machines, wires, and mixing desks.
+The model learns what it sees: **cinematic physics**.
 
-A mozifizika pedig hazudik.
+And cinematic physics lies.
 
-**A pixerllr ezt a gyökérokot kezeli — nem a tüneteket foltozza.**
+**pixerllr addresses the root cause — it does not patch the symptoms.**
 
 ---
 
-## Mit csinál?
+## What it does
 
-Valódi felvételekből — élő szereplős filmből, természetfilmből, candid videóból — kinyeri a valóság törvényeit:
+From real footage — live-action film, nature footage, candid video — pixerllr extracts the laws of reality:
 
-* **Anatómia és gravitáció**
-  Hogyan mozog egy valódi test.
+* **Anatomy and gravity**
+  How a real body moves.
 
-* **Öregedés**
-  Hogyan merevedik a járás, hogyan ráncosodik a bőr évtizedek alatt.
+* **Aging**
+  How gait stiffens and skin wrinkles across decades.
 
-* **Természetes fény**
-  Hova esik az árnyék, ha a Nap világít.
+* **Natural light**
+  Where a shadow falls when the Sun is the light source.
 
-* **Szél**
-  Hogyan hajlik a nád, a lomb, a haj.
+* **Wind**
+  How reeds, leaves, and hair bend.
 
-* **Víz**
-  Hogyan terjed a hullám, ha senki nem rendezte meg.
+* **Water**
+  How a wave propagates when nobody staged it.
 
-* **Tér**
-  Mélység a képben, zengés a hangban — nyílt vagy zárt a világ.
+* **Space**
+  Depth in the image, resonance in the sound — whether the world is open or closed.
 
-A kinyert törvény lenyomatként kerül tárolásra:
+The extracted law is stored as a fingerprint:
 
 ```text
-csontváz-szekvencia
-válaszgörbe
-tér-lenyomat
+skeleton sequence
+response curve
+spatial fingerprint
 ```
 
-Egyetlen JSON-rekord videónként.
+One JSON record per video.
 
-**A kép megy a kukába. A törvény marad.**
+**The image is discarded. The law remains.**
 
-Ebből épül a mintakönyvtár, amiből generatív modellek megtanulhatják, amit ma nem tudnak:
+This becomes a reference library from which generative models can learn what they currently do not know:
 
-**élethű filmet készíteni.**
+**how to make lifelike film.**
 
-Nem életszerűt.
-**Élethűt.**
+Not plausible.
+**Lifelike.**
 
 ---
 
-## A gép
+## The machine
 
 ```text
-FORRÁS      → archív ág: film, természetfilm
-             + crowd ág: saját kamera
+SOURCE      → archive branch: film, nature footage
+             + crowd branch: personal camera footage
 
-KINYERÉS    → könnyű réteg CPU-n
-             + nehéz réteg ingyenes GPU-n
+EXTRACTION  → lightweight layer on CPU
+             + heavy layer on free GPU
 
-LENYOMAT    → JSON-rekord, hash-kulccsal, kép nélkül
+FINGERPRINT → JSON record, hash-keyed, image-free
 
-KÖNYVTÁR    → törvénygörbék:
-               szél ↔ lomb
-               nap ↔ árnyék
-               kor ↔ járás
+LIBRARY     → law curves:
+               wind ↔ foliage
+               sun ↔ shadow
+               age ↔ gait
 
-CSOMAG      → prior-modulok
-             + loss-könyvtár
-             + mutató-dataset
+PACKAGE     → prior modules
+             + loss library
+             + pointer dataset
 
-VALIDÁCIÓ   → mérhetően kevesebb fizikai hiba,
-               vagy nem ér semmit
+VALIDATION  → measurably fewer physical errors,
+               or it is worth nothing
 ```
 
-Minden alkatrész kész, nyílt eszközre épül.
+Every component is built on open tools.
 
-Semmit nem találtunk fel, ami már működik — csak összekötöttük, amit eddig senki.
-
----
-
-## Két üzemmód — a valóság-kapu
-
-### 1. Mérőműszer
-
-Bármilyen videót pontoztathatsz, AI-generáltat is.
-
-Megtudod, hol hazudik fizikát:
-
-* kéz
-* árnyék
-* szél
-* lebegés
-* mozgás
-* tér
-* konzisztencia
-
-Számokban.
-
-A kukázott generálásod így tanulsággá válik.
-
-**Riport jön. Tárolás nulla.**
+We did not invent what already works — we connected what nobody had connected before.
 
 ---
 
-### 2. Tanító
+## Two modes — the reality gate
 
-A könyvtárba kizárólag valódi felvétel léphet be.
+### 1. Measuring instrument
 
-Háromrétegű kapu őrzi:
+You can score any video, including AI-generated video.
 
-1. **Eredet-ellenőrzés**
-2. **Metaadat-koherencia**
-3. **Fizikai korreláció**
+You learn where it lies about physics:
 
-A valódi felvétel korrelál a mért széllel és a kiszámított napállással.
+* hands
+* shadows
+* wind
+* floating bodies
+* motion
+* space
+* consistency
 
-A generált nem.
+In numbers.
 
-Ami elbukik, nem kerül be.
+Your discarded generation becomes a lesson.
 
-> **A kukázott generálásod tanulság.
-> A referenciafelvételed kincs.**
+**You get a report. Nothing is stored.**
 
 ---
 
-## Mit kapsz — és mit kap a közös?
+### 2. Teacher
 
-Futtatod a műszert, azonnal riportot kapsz.
+Only real footage may enter the library.
 
-**Ingyen. Feltétel nélkül.**
+A three-layer gate protects it:
 
-Ha valódi felvételed lenyomata átmegy a kapun, contributor vagy.
+1. **Origin verification**
+2. **Metadata coherence**
+3. **Physical correlation**
 
-Contributor-ként kapsz:
+Real footage correlates with measured wind and computed solar position.
 
-* teljes felbontású hozzáférést a mintakönyvtár összes görbéjéhez;
-* név szerinti, hivatkozható acknowledgmentet;
-* korai hozzáférést a prior-csomagokhoz;
-* előre betanított fizikatudás-modulokat, amelyeket a saját workflow-dba köthetsz;
-* kevesebb selejtet;
-* kevesebb elégetett kreditet.
+Generated footage does not.
 
-A licenc a szerződésünk.
+What fails the gate does not enter.
 
-Az adat és a könyvtár:
+> **Your discarded generation is a lesson.
+> Your reference footage is treasure.**
+
+---
+
+## What you get — and what the commons gets
+
+Run the instrument and you get an immediate report.
+
+**Free. No strings attached.**
+
+If the fingerprint of your real footage passes the gate, you become a contributor.
+
+As a contributor, you get:
+
+* full-resolution access to all curves in the reference library;
+* named, citable acknowledgment;
+* early access to prior packages;
+* pretrained physics-knowledge modules that can be connected to your own workflow;
+* fewer failed generations;
+* fewer burned credits.
+
+The license is our contract.
+
+The data and the library are released under:
 
 ```text
 CC BY-NC-SA 4.0
 ```
 
-Mindenkinek szabad nem-kereskedelmi célra.
+Free for everyone for non-commercial use.
 
-Aki termékbe építené, kereskedelmi licencet vált.
+Anyone who wants to build it into a product needs a commercial license.
 
-**Te építed, te használod ingyen.
-Aki pénzt csinál belőle, az hozzájárul a fenntartásához.**
+**You build it, you use it for free.
+Whoever makes money from it helps sustain it.**
 
-Ez az OpenStreetMap-modell, és húsz éve működik.
-
----
-
-## Mit nem csinálunk?
-
-* **Videót nem tárolunk és nem terjesztünk. Soha.**
-  A rekord metaadat és mutató — ugyanaz a modell, amire a legnagyobb nyílt datasetek épülnek.
-
-* **Arcot, személyt, jelenetet nem őrzünk.**
-  A lenyomatban nincs kép, nincs biometrikus adat — csak az, ami bármely domainben igaz.
-
-* **AI-generált anyagot nem tanítunk.**
-  Mérünk belőle — tanulni a valóságból tanulunk.
-
-* **Kevert hangsávból zenét, szinkront nem tanítunk.**
-  A helyszíni hang tér-lenyomata — zengés, nyílt vagy zárt tér — viszont törvény, és bekerül.
+This is the OpenStreetMap model, and it has worked for twenty years.
 
 ---
 
-## Indulás — nulla telepítés
+## What we do not do
 
-1. Nyisd meg a lenyomat-űrlapot:
+* **We do not store or distribute video. Ever.**
+  The record is metadata and a pointer — the same model used by the largest open datasets.
+
+* **We do not preserve faces, identities, or scenes.**
+  The fingerprint contains no image and no biometric data — only what is true across domains.
+
+* **We do not train on AI-generated material.**
+  We measure it — but we learn from reality.
+
+* **We do not learn music, dubbing, or mixed soundtrack content.**
+  The spatial fingerprint of location sound — resonance, open or closed space — is a law, and it enters.
+
+---
+
+## Getting started — zero installation
+
+1. Open the fingerprint form:
 
    ```text
    Issues → New
    ```
 
-2. Illessz be egy videó-URL-t.
+2. Paste a video URL.
 
-3. Küldd el.
+3. Submit it.
 
-4. A mi gépünk dolgozik.
+4. Our machine does the work.
 
-5. Te linket kapsz a riportodról.
+5. You receive a link to your report.
 
-6. A lenyomat magától a könyvtárba kerül, ha átmegy a valóság-kapun.
+6. The fingerprint enters the library automatically if it passes the reality gate.
 
-Visszatérő vagy, és saját gépen futtatnád?
+Already returning, and want to run it on your own machine?
 
-**Forkold a repót — a többit a user-guide mondja el.**
-
----
-
-## Kapcsolódó minta
-
-Ez a README a [`Human2ai-intent-codec`](https://github.com/NullCodeLabs/Human2ai-intent-codec) irányából épített, narratív-technikai GitHub-formátumot követi:
-
-* erős nyitó állítás;
-* emberi probléma;
-* technikai válasz;
-* tiszta működési modell;
-* contributor-érték;
-* világos etikai határok;
-* azonnali indulási út.
+**Fork the repo — the user guide explains the rest.**
 
 ---
 
-## Státusz
+## Related pattern
+
+This README follows the narrative-technical GitHub format used in [`Human2ai-intent-codec`](https://github.com/NullCodeLabs/Human2ai-intent-codec):
+
+* strong opening claim;
+* human problem;
+* technical answer;
+* clear operating model;
+* contributor value;
+* explicit ethical boundaries;
+* immediate path to start.
+
+---
+
+## Status
 
 ```text
-v0.1 — építés alatt
+v0.1 — under construction
 ```
 
-Kész:
+Done:
 
-* séma;
-* repo-váz;
-* forráshierarchia.
+* schema;
+* repo skeleton;
+* source hierarchy.
 
-Következik:
+Next:
 
-* kinyerő scriptek;
-* validátor workflow;
-* első törvénygörbék.
+* extraction scripts;
+* validator workflow;
+* first law curves.
 
 ---
 
-## Hozzájárulás
+## Contributing
 
-Ha látod benne, amit mi:
+If you see what we see:
 
 **Star.**
 
-Ha használnád:
+If you would use it:
 
 **Fork.**
 
-Ha hibát találsz vagy jobb utat tudsz:
+If you find a bug or know a better path:
 
-**Issue — azt olvassuk el először.**
+**Open an Issue — that is what we read first.**
 
 ---
 
-## Licenc
+## License
 
 © Infinity Possibility Media Co. | NullCodeLabs
 
-Adat és dokumentáció:
+Data and documentation:
 
 ```text
 CC BY-NC-SA 4.0
 ```
 
-Kereskedelmi felhasználás külön licenc alapján.
+Commercial use requires a separate license.
 
 ---
 
-## Kapcsolat
+## Contact
 
 * Email: `istvan.taubert@gmail.com`
 * GitHub: [`@NullCodeLabs`](https://github.com/NullCodeLabs)
