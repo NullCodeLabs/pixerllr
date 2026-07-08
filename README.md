@@ -1,6 +1,6 @@
-# pixerllr
+#  Pixerllr
 
-##A generatív videónak nincs szüksége több fantáziára. Több valóság kel!##
+#A generatív videónak nincs szüksége több fantáziára. Több valóság kel!#
 > **Valóságlenyomatok AI-videókhoz — gravitáció, fény, mozgás, szél, víz és anatómia tanítása valódi felvételekből...**
 
 A hat ujjú kéz nem művészi döntés.
