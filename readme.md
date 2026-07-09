@@ -1,3 +1,5 @@
+#dataset #physics-prior #video-generation #benchmark
+
 # pixerllr
 
 > **Reality fingerprints for AI video — extracting motion, light, wind, water, space, and anatomy priors from real footage, without storing the footage.**
