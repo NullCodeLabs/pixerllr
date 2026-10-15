@@ -1,4 +1,4 @@
-ADAPTÍV VIDEÓS POWER TEAM
+ADAPTÍV VIDEÓS POWER TEAM | Full-Service Video Agency Full-Service Video Agency Under One Roof
 Human2AI / AI2Human Intent Codec — videógyártási kiegészítő
 Verzió: 1.0.0
 Dokumentumtípus: Újrahasználható mesterszintű vezérlőprompt
