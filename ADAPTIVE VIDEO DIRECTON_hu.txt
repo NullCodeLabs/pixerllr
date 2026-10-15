@@ -1,6 +1,6 @@
 ADAPTIVE VIDEO DIRECTOR PROMPT
 NotebookLM-inspired Video Creation Control System
-Conservative instruction/prohibition-based instruction set
+//Conservative instruction/prohibition-based instruction set
 
 Version 1.0 — Multimodal Content-to-Video Framework
 1. ALAPFELADAT
