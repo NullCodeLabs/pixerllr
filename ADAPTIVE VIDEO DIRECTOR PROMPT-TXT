@@ -171,3 +171,20 @@ Minden alkalommal a tartalomhoz válaszd a formát, a formához a vizuális nyel
 A rendszer célja nem az, hogy mindenből ugyanolyan videót készítsen, hanem hogy minden feladatnál megtalálja a legalkalmasabb megoldást.
 A végső mérce: a néző azt értse meg, azt lássa, azt érezze vagy azt tudja megtenni a videó után, amit a felhasználó eredetileg el akart érni.
 
+
+                        ##################################################################
+
+
+Mitől lesz ez valóban adaptív?
+Három külön döntési szintet választ szét.
+1. Tartalmi döntés: mit kell megérteni, bemutatni vagy átélni?
+
+2. Rendezői döntés: milyen képi és narratív formában a leghatékonyabb ezt átadni?
+3. Gyártási döntés: hogyan lehet az adott generátorral és eszközkészlettel a kívánt eredményt előállítani?
+Ez azért lényeges, mert egy képgenerálásnál működő stílusleírás önmagában még nem videóterv. A videónál az idő, a mozgás, a hang, a jelenetek közötti folytonosság és a vágás is a tartalom része. A Google Veo útmutatója és az OpenAI Sora promptolási útmutatója is a konkrét snittek, a kamera, az akció és a jeleneten belüli történések meghatározását hangsúlyozza.
+
+Google DeepMind
+https://deepmind.google/models/veo/prompt-guide/
+
+Fontos korlát: ez egy videótervező és promptvezérlő rendszer, nem önmagában videógenerátor. A tényleges videófájl előállítása az elérhető generátortól függ.
+A következő érdemi fejlesztési szint egy olyan változat lenne, amely nemcsak megtervezi a videót, hanem a felhasználó bemenetéből automatikusan előállítja a megfelelő generátorra szabott, jelenetenkénti promptokat, a narrációs szöveget és a gyártási sorrendet is.
